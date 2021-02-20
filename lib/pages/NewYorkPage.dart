@@ -12,7 +12,10 @@ class NewYorkPage extends StatefulWidget{
   }
 }
 
-class NewYorkPageState extends State<NewYorkPage> implements PageViewRollingPositionListener{
+class NewYorkPageState extends State<NewYorkPage> with AutomaticKeepAliveClientMixin implements PageViewRollingPositionListener{
+  @override
+  bool get wantKeepAlive => true;
+
   double rollPosition = 0;
   @override
   void initState() {

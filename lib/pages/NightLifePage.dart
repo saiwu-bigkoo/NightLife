@@ -25,7 +25,6 @@ class NightLifePage extends StatelessWidget {
               onNotification: (ScrollNotification notification) {
                 int index = 0;
                 for (PageViewRollingPositionListener listener in listeners){
-                  print("===============================================${notification.metrics.pixels}");
                   double rollPosition = notification.metrics.pixels - index * widthScreen;
                   listener.onRolling(rollPosition);
                   index ++;

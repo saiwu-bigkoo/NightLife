@@ -12,7 +12,10 @@ class ParisPage extends StatefulWidget{
   }
 }
 
-class ParisPageState extends State<ParisPage> implements PageViewRollingPositionListener{
+class ParisPageState extends State<ParisPage> with AutomaticKeepAliveClientMixin implements PageViewRollingPositionListener{
+  @override
+  bool get wantKeepAlive => true;
+
   double rollPosition = 0;
   @override
   void initState() {

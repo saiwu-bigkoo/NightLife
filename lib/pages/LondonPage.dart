@@ -12,7 +12,10 @@ class LondonPage extends StatefulWidget{
   }
 }
 
-class LondonPageState extends State<LondonPage> implements PageViewRollingPositionListener{
+class LondonPageState extends State<LondonPage> with AutomaticKeepAliveClientMixin implements PageViewRollingPositionListener{
+  @override
+  bool get wantKeepAlive => true;
+
   double rollPosition = 0;
   @override
   void initState() {
@@ -38,11 +41,6 @@ class LondonPageState extends State<LondonPage> implements PageViewRollingPositi
           child: Image.asset("assets/images/ic_cloud3.png",  height: 100, fit: BoxFit.fitHeight,),
           top: 160,
           left: 60 + rollPosition*0.6,
-        ),
-        Positioned(
-          child: Image.asset("assets/images/ic_cloud2.png",  height: 95, fit: BoxFit.fitHeight,),
-          top: 320,
-          left: 300 + rollPosition*1.8,
         ),
         Positioned(
           child: Image.asset("assets/images/ic_cloud4.png",  height: 100, fit: BoxFit.fitHeight,),
